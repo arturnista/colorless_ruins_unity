@@ -5,6 +5,8 @@ using UnityEngine;
 public class SaveData
 {
     
+    public float StartTime;
+
     public bool HasFreeMovement;
 
     public int FruitCount;
@@ -24,6 +26,8 @@ public class SaveData
         BlueGem = false;
         GreenGem = false;
         YellowGem = false;
+
+        StartTime = Time.time;
     }
 
     public SaveData(SaveData copy)

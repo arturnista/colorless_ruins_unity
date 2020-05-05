@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ public class UIFinal : MonoBehaviour
     [SerializeField] private Animator _blueAnimator;
     [SerializeField] private Animator _greenAnimator;
     [SerializeField] private Animator _yellowAnimator;
+    [Space]
+    [SerializeField] private TextMeshProUGUI _timeText;
 
     private const int _maxFruitCount = 9;
 
@@ -23,12 +26,18 @@ public class UIFinal : MonoBehaviour
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
-        StartCoroutine(UIStartCoroutine());
+        
+        _timeText.text = "";
+        _fruitsText.text = string.Format("0 / {0}", _maxFruitCount);
+
+        if (GameController.SaveData != null)
+        {
+            StartCoroutine(UIStartCoroutine());
+        }
     }
 
     IEnumerator UIStartCoroutine()
     {
-        _fruitsText.text = string.Format("0 / {0}", _maxFruitCount);
         yield return new WaitForSeconds(1f);
         
         for (int i = 1; i <= GameController.SaveData.FruitCount; i++)
@@ -65,6 +74,14 @@ public class UIFinal : MonoBehaviour
             _yellowAnimator.SetBool("IsCollected", true);
             _audioSource.PlayOneShot(_collectAudio);
         }
+
+        if (Configuration.Main.SpeedrunTimer)
+        {
+            yield return new WaitForSeconds(1f);
+            _audioSource.PlayOneShot(_fruitAudio);
+            _timeText.text = Format.Time(Time.time - GameController.SaveData.StartTime);
+        }
+
     }
 
 }

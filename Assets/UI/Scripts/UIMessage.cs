@@ -8,6 +8,9 @@ public class UIMessage : MonoBehaviour
     
     public static UIMessage Main;
 
+    public delegate void CloseMessageHandler();
+    public event CloseMessageHandler OnCloseMessage;
+
     [SerializeField] private TextMeshProUGUI _textMesh;
     [SerializeField] private TextMeshProUGUI _pressAnyKeyTextMesh;
     [Space]
@@ -66,7 +69,10 @@ public class UIMessage : MonoBehaviour
 
     IEnumerator ShowMessageCoroutine()
     {
-        PauseController.Main.Pause(true);
+        if (PauseController.Main != null)
+        {
+            PauseController.Main.Pause(true);
+        }
 
         _pressAnyKeyTextMesh.gameObject.SetActive(false);
         _isShowing = true;
@@ -98,7 +104,14 @@ public class UIMessage : MonoBehaviour
     {
         _canvas.enabled = false;
         _isShowing = false;
-        PauseController.Main.Resume(true);
+        if (PauseController.Main != null)
+        {
+            PauseController.Main.Resume(true);
+        }
+        if (OnCloseMessage != null)
+        {
+            OnCloseMessage();
+        }
     }
 
 }

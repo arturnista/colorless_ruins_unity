@@ -23,9 +23,11 @@ public class PlayerMovement : MonoBehaviour, IPausable
     private Vector3 _beforeDirection;
 
     private LayerMask _groundMask;
+    private Animator _animator;
 
     void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _nextPosition = _rigidbody.position;
         m_HasFreeMovement = false;
@@ -87,9 +89,17 @@ public class PlayerMovement : MonoBehaviour, IPausable
                 return;
             }
         }
+
+        if (_animator != null)
+        {
+            Vector2 direction = (_nextPosition - _rigidbody.position).normalized;
+            _animator.SetInteger("xDirection", Mathf.RoundToInt(direction.x));
+            _animator.SetInteger("yDirection", Mathf.RoundToInt(direction.y));
+        }
         
         Vector2 movePosition = Vector2.MoveTowards(_rigidbody.position, _nextPosition, m_MoveSpeed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(movePosition);
+
 
     }
 

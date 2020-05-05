@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
 
         CreatePlayer();
 
-        UIMessage.Main.Show("Move using WASD.\nYou can pause using ESC.\n\nCollect the KEY to open the door.");
+        UIMessage.Main.Show("Move using the arrow keys or W A S D.\nYou can pause using ESC.\n\nCollect the KEY to open the door.");
     }
 
     void CreatePlayer()
