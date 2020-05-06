@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9c5d52d59005648897db536d567b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathEffectPrefab: {fileID: 2371965569382669259, guid: 3ff2fbe3d28967645940c1d13d1e0437,
+    type: 3}
 --- !u!114 &6823119846481772239
 MonoBehaviour:
   m_ObjectHideFlags: 0

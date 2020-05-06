@@ -501,7 +501,8 @@ AudioSource:
   m_GameObject: {fileID: 3755270623666998662}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 09e6af30f8266994889c094c0f79bd54,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -600,8 +601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37768501af2a05b419deb9090f3eab33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _completeAudio: {fileID: 8300000, guid: a35306badd7784d4ebe98879a4844de5, type: 3}
+  _fruitsTitle: {fileID: 3973601736460325434}
   _fruitAudio: {fileID: 8300000, guid: 020a9b8f984d5934bb7ed158aaf87210, type: 3}
   _fruitsText: {fileID: 3973601735967706613}
+  _gemsTitle: {fileID: 3973601736478117043}
   _collectAudio: {fileID: 8300000, guid: 4853452a4c67e174287b5aceab8d9c2d, type: 3}
   _redAnimator: {fileID: 7424478858974696377}
   _blueAnimator: {fileID: 7894961302814460989}
@@ -1852,6 +1856,7 @@ GameObject:
   - component: {fileID: 3973601736133784532}
   - component: {fileID: 3973601736133784534}
   - component: {fileID: 3973601736133784533}
+  - component: {fileID: 9195728872123468359}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -1915,6 +1920,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &9195728872123468359
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973601736133784539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a978b8c491d92e2429210d748cc40f44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3973601736145244283
 GameObject:
   m_ObjectHideFlags: 0

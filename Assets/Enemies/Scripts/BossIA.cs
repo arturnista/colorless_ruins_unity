@@ -108,6 +108,7 @@ public class BossIA : MonoBehaviour, ILevelListener
         yield return new WaitForSeconds(2f);
 
         GameObject.FindObjectOfType<KnightSymbol>().Activate();
+        GameObject.FindObjectOfType<FinalPortal>().Activate();
         UIMessage.Main.Show("After you defeat the skull-head-thing, you watch as a portal is created in front of you.\n\nInside, you can see the Color Kingdom, your realm.");
         Destroy(gameObject);
     }

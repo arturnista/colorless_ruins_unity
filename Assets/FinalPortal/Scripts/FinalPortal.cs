@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class FinalPortal : MonoBehaviour
 {
+
+    private ParticleSystem _effect;
+
+    void Awake()
+    {
+        _effect = GetComponentInChildren<ParticleSystem>();
+    }
+
+    public void Activate()
+    {
+        _effect.Play();
+    }
     
     void OnTriggerEnter2D(Collider2D collider)
     {

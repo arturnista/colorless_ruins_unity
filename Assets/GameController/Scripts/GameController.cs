@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     
     private static SaveData _saveData;
-    public static SaveData SaveData { get => _saveData; }
+    public static SaveData SaveData { get => _saveData; set => _saveData = value; }
 
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private Vector3 _spawnPosition;

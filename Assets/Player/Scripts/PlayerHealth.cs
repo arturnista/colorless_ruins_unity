@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour, IHealth
 {
 
+    [SerializeField] private GameObject _deathEffectPrefab;
+
     public delegate void PlayerDeathHandler();
 
     public event PlayerDeathHandler OnPlayerDeath;
@@ -15,6 +17,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         {
             OnPlayerDeath();
         }
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

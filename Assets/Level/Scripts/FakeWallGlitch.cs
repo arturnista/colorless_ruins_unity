@@ -26,7 +26,7 @@ public class FakeWallGlitch : MonoBehaviour, ILevelListener
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f + Random.Range(2f, 4f));
+            yield return new WaitForSeconds(6f + Random.Range(2f, 4f));
             _animator.SetTrigger("Glitch");
         }
     }
