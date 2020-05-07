@@ -61,7 +61,6 @@ public class Configuration
         float normalized = (m_Volume / 100f);
         normalized = Mathf.Clamp(normalized, 0.0001f, 1f);
         _audioMixer.SetFloat("Volume", Mathf.Log10(normalized) * 20f);
-        Debug.Log(normalized);
     }
 
 }
