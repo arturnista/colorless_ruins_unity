@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1eafd3fdcd103479f6d5e412d56c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _link: https://macrok.itch.io
+  _link: https://arturnista.itch.io/
 --- !u!1 &2386138633914948345
 GameObject:
   m_ObjectHideFlags: 0
